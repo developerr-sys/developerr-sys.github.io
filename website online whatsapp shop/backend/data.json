@@ -1,0 +1,40 @@
+{
+  "shops": [
+    {
+      "id": 1777027592095,
+      "shop_name": "designer",
+      "whatsapp_number": "03222510615",
+      "shop_description": "Welcome to our shop! We provide the best products with quick and easy ordering via WhatsApp.",
+      "theme": "theme-slate-grey",
+      "currency": "$",
+      "created_at": "2026-04-24T10:46:32.095Z"
+    },
+    {
+      "id": 1787557336022,
+      "shop_name": "graphic-designerr",
+      "whatsapp_number": "0866453",
+      "shop_description": "fghfhgfhjghjgi",
+      "theme": "theme-whatsapp-green",
+      "currency": "$",
+      "created_at": "2026-08-24T07:42:16.022Z"
+    }
+  ],
+  "products": [
+    {
+      "id": 1777031376723,
+      "shop_id": 1777027592095,
+      "product_name": "t-shirt",
+      "price": 20,
+      "category": "Clothing",
+      "image_url": "1777031376658-828189307.png"
+    },
+    {
+      "id": 1787557336023,
+      "shop_id": 1787557336022,
+      "product_name": "T-Shirt",
+      "price": 20,
+      "category": "Clothes",
+      "image_url": "1787557335948-547132634.png"
+    }
+  ]
+}

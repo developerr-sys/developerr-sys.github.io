@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmol Akber | Personal Portfolio - Computer Science Graduate</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Personal Portfolio of Anmol Akber, a Computer Science Graduate specializing in Full Stack Web Development, Graphic Design, and MS Office. Discover projects, experience, and achievements.">
+    <meta name="keywords"
+        content="Anmol Akber, Web Developer, Full Stack Developer, Graphic Designer, Computer Science Graduate, Portfolio, Mardan, KPK">
+    <meta name="author" content="Anmol Akber">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light-mode">
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar-main" class="navbar navbar-expand-xl fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="brand-logo-container">
+                    <span class="brand-icon-box"><i class="fa-solid fa-code"></i></span>
+                    <span class="brand-text">Anmol<span class="text-accent">Akber</span></span>
+                </div>
+            </a>
+            <div class="d-flex align-items-center order-xl-3 gap-2">
+                <!-- Unified Theme & Appearance Controls -->
+                <div class="theme-picker-wrapper">
+                    <button class="btn-theme-palette" id="theme-picker-fab" aria-label="Theme & Appearance Settings"
+                        title="Appearance Settings">
+                        <i class="fa-solid fa-palette"></i>
+                    </button>
+                    <div class="theme-picker-panel" id="theme-picker-panel">
+                        <!-- Mode Section -->
+                        <div class="theme-section">
+                            <h6 class="theme-section-title"><i class="fa-solid fa-circle-half-stroke me-1"></i>Theme
+                                Mode</h6>
+                            <div class="mode-toggle-group">
+                                <button class="mode-btn active" data-mode="light">
+                                    <i class="fa-solid fa-sun me-1"></i>Light
+                                </button>
+                                <button class="mode-btn" data-mode="dark">
+                                    <i class="fa-solid fa-moon me-1"></i>Dark
+                                </button>
+                            </div>
+                        </div>
+                        <hr class="theme-panel-divider">
+                        <!-- Color Palette Section -->
+                        <div class="theme-section">
+                            <h6 class="theme-section-title"><i class="fa-solid fa-swatchbook me-1"></i>Color Palette
+                            </h6>
+                            <div class="theme-swatches">
+                                <div class="theme-swatch swatch-default active-swatch" data-theme="default"
+                                    data-label="Default" title="Default Blue"></div>
+                                <div class="theme-swatch swatch-emerald" data-theme="emerald" data-label="Emerald"
+                                    title="Emerald"></div>
+                                <div class="theme-swatch swatch-rose" data-theme="rose" data-label="Rose" title="Rose">
+                                </div>
+                                <div class="theme-swatch swatch-amber" data-theme="amber" data-label="Amber"
+                                    title="Amber"></div>
+                                <div class="theme-swatch swatch-violet" data-theme="violet" data-label="Violet"
+                                    title="Violet"></div>
+                                <div class="theme-swatch swatch-cyan" data-theme="cyan" data-label="Cyan" title="Cyan">
+                                </div>
+                                <div class="theme-swatch swatch-coral" data-theme="coral" data-label="Coral"
+                                    title="Coral"></div>
+                                <div class="theme-swatch swatch-indigo" data-theme="indigo" data-label="Indigo"
+                                    title="Indigo"></div>
+                                <div class="theme-swatch swatch-teal" data-theme="teal" data-label="Teal" title="Teal">
+                                </div>
+                                <div class="theme-swatch swatch-crimson" data-theme="crimson" data-label="Crimson"
+                                    title="Crimson"></div>
+                                <div class="theme-swatch swatch-lime" data-theme="lime" data-label="Lime" title="Lime">
+                                </div>
+                                <div class="theme-swatch swatch-sky" data-theme="sky" data-label="Sky" title="Sky">
+                                </div>
+                                <div class="theme-swatch swatch-fuchsia" data-theme="fuchsia" data-label="Fuchsia"
+                                    title="Fuchsia"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse justify-content-center order-xl-2" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/skills.html">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/experience.html">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/education.html">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/achievements.html">Achievements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/why-me.html">Why Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-section d-flex align-items-center position-relative overflow-hidden">
+        <!-- Floating Particles & Blobs Background -->
+        <div class="blob-wrapper">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+        <canvas id="particles-canvas"></canvas>
+
+        <div class="container position-relative z-index-2">
+            <div class="row align-items-center min-vh-100 py-5">
+                <!-- Profile Image on Left -->
+                <div class="col-lg-5 text-center text-lg-start mb-5 mb-lg-0" data-aos="fade-right"
+                    data-aos-duration="1200">
+                    <div class="profile-image-container">
+                        <div class="glowing-border"></div>
+                        <img src="assets/images/profile_photo_1785591262873.png" alt="Anmol Akber Profile Picture"
+                            class="profile-img">
+                        <!-- Floating Badges / Icons -->
+                        <div class="floating-badge badge-1"><i class="fa-solid fa-code"></i></div>
+                        <div class="floating-badge badge-2"><i class="fa-solid fa-database"></i></div>
+                        <div class="floating-badge badge-3"><i class="fa-solid fa-file-excel"></i></div>
+                    </div>
+                </div>
+                <!-- Text Content on Right -->
+                <div class="col-lg-7 text-center text-lg-start" data-aos="fade-left" data-aos-duration="1200">
+                    <div class="hero-text-wrapper">
+                        <h5 class="sub-greeting">Hello, I'm</h5>
+                        <h1 class="main-name">Anmol Akber</h1>
+                        <h3 class="typed-wrapper">
+                            I am a <span id="typed-strings"></span><span class="typed-cursor">|</span>
+                        </h3>
+                        <p class="hero-description">
+                            A Computer Science Graduate with strong skills in Web Development, Database Management, and
+                            Microsoft Office. Passionate about engineering responsive web apps, building clean backend
+                            logic, and solving complex problems.
+                        </p>
+                        <div
+                            class="hero-buttons mt-4 d-flex align-items-center flex-wrap gap-2 justify-content-center justify-content-lg-start">
+                            <a href="Anmol CV.jpg" target="_blank" class="btn btn-primary btn-gradient">
+                                <i class="fa-solid fa-download me-2"></i>Download CV
+                            </a>
+                            <a href="pages/contact.html" class="btn btn-outline-custom">
+                                <i class="fa-solid fa-paper-plane me-2"></i>Hire Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CV Preview Modal -->
+    <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content border-0">
+                <!-- Top Toolbar above CV -->
+                <div class="cv-modal-header d-flex align-items-center justify-content-between">
+                    <div class="cv-modal-title">
+                        <i class="fa-solid fa-file-pdf text-accent fs-5"></i>
+                        <span>Anmol Akber - Curriculum Vitae</span>
+                    </div>
+                    <div class="cv-top-actions">
+                        <div class="cv-zoom-controls me-2 d-none d-sm-inline-flex">
+                            <button type="button" class="cv-zoom-btn" id="cvZoomOut" title="Zoom Out"><i
+                                    class="fa-solid fa-minus"></i></button>
+                            <button type="button" class="cv-zoom-btn" id="cvZoomReset" title="Reset Zoom"><i
+                                    class="fa-solid fa-rotate-left"></i></button>
+                            <button type="button" class="cv-zoom-btn" id="cvZoomIn" title="Zoom In"><i
+                                    class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <a href="Anmol CV.jpg" download="Anmol_Akber_CV.jpg" class="btn-cv-download-top"
+                            id="cvTopDownloadBtn">
+                            <i class="fa-solid fa-download"></i> Download CV
+                        </a>
+                        <a href="Anmol CV.jpg" target="_blank"
+                            class="btn btn-outline-light btn-sm rounded-circle p-2 ms-1" id="cvOpenOriginalBtn"
+                            title="Open Original Image">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        <button type="button" class="btn-close btn-close-white ms-2" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                </div>
+                <!-- CV Image Viewport -->
+                <div class="cv-modal-body" id="cvModalBody">
+                    <div class="cv-image-frame" id="cvImageFrame">
+                        <img src="Anmol CV.jpg" alt="Anmol Akber CV Preview" id="cvImage">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="btn btn-primary" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation Library JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Typed.js for Typing Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+
+    <!-- Footer -->
+    <footer class="main-footer text-center">
+        <div class="container">
+            <p class="mb-0">Developed By <span class="text-accent">Anmol Akber</span> &copy; 2026. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

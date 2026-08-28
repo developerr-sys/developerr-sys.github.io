@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmol Akber | Blog - Computer Science Graduate</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Read articles and ideas on web development, responsive design, javascript, and UI design tips by Anmol Akber.">
+    <meta name="keywords" content="Anmol Akber, Blog, Articles, Javascript, UI Design, Web Development, Portfolio">
+    <meta name="author" content="Anmol Akber">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="light-mode">
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar-main" class="navbar navbar-expand-xl fixed-top navbar-scrolled">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <div class="brand-logo-container">
+                    <span class="brand-icon-box"><i class="fa-solid fa-code"></i></span>
+                    <span class="brand-text">Anmol<span class="text-accent">Akber</span></span>
+                </div>
+            </a>
+            <div class="d-flex align-items-center order-xl-3 gap-2">
+                <!-- Unified Theme & Appearance Controls -->
+                <div class="theme-picker-wrapper">
+                    <button class="btn-theme-palette" id="theme-picker-fab" aria-label="Theme & Appearance Settings"
+                        title="Appearance Settings">
+                        <i class="fa-solid fa-palette"></i>
+                    </button>
+                    <div class="theme-picker-panel" id="theme-picker-panel">
+                        <!-- Mode Section -->
+                        <div class="theme-section">
+                            <h6 class="theme-section-title"><i class="fa-solid fa-circle-half-stroke me-1"></i>Theme
+                                Mode</h6>
+                            <div class="mode-toggle-group">
+                                <button class="mode-btn active" data-mode="light">
+                                    <i class="fa-solid fa-sun me-1"></i>Light
+                                </button>
+                                <button class="mode-btn" data-mode="dark">
+                                    <i class="fa-solid fa-moon me-1"></i>Dark
+                                </button>
+                            </div>
+                        </div>
+                        <hr class="theme-panel-divider">
+                        <!-- Color Palette Section -->
+                        <div class="theme-section">
+                            <h6 class="theme-section-title"><i class="fa-solid fa-swatchbook me-1"></i>Color Palette
+                            </h6>
+                            <div class="theme-swatches">
+                                <div class="theme-swatch swatch-default active-swatch" data-theme="default"
+                                    data-label="Default" title="Default Blue"></div>
+                                <div class="theme-swatch swatch-emerald" data-theme="emerald" data-label="Emerald"
+                                    title="Emerald"></div>
+                                <div class="theme-swatch swatch-rose" data-theme="rose" data-label="Rose" title="Rose">
+                                </div>
+                                <div class="theme-swatch swatch-amber" data-theme="amber" data-label="Amber"
+                                    title="Amber"></div>
+                                <div class="theme-swatch swatch-violet" data-theme="violet" data-label="Violet"
+                                    title="Violet"></div>
+                                <div class="theme-swatch swatch-cyan" data-theme="cyan" data-label="Cyan" title="Cyan">
+                                </div>
+                                <div class="theme-swatch swatch-coral" data-theme="coral" data-label="Coral"
+                                    title="Coral"></div>
+                                <div class="theme-swatch swatch-indigo" data-theme="indigo" data-label="Indigo"
+                                    title="Indigo"></div>
+                                <div class="theme-swatch swatch-teal" data-theme="teal" data-label="Teal" title="Teal">
+                                </div>
+                                <div class="theme-swatch swatch-crimson" data-theme="crimson" data-label="Crimson"
+                                    title="Crimson"></div>
+                                <div class="theme-swatch swatch-lime" data-theme="lime" data-label="Lime" title="Lime">
+                                </div>
+                                <div class="theme-swatch swatch-sky" data-theme="sky" data-label="Sky" title="Sky">
+                                </div>
+                                <div class="theme-swatch swatch-fuchsia" data-theme="fuchsia" data-label="Fuchsia"
+                                    title="Fuchsia"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse justify-content-center order-xl-2" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="education.html">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="skills.html">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="experience.html">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="achievements.html">Achievements</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="why-me.html">Why Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section py-6 bg-light-section" style="margin-top: 100px; min-height: 80vh;">
+        <div class="container">
+            <div class="section-title-wrapper text-center mb-5" data-aos="fade-up">
+                <span class="section-subtitle">Articles & Ideas</span>
+                <h2 class="section-title">Blog Section</h2>
+                <div class="title-bar"></div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Blog 1 -->
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-card">
+                        <div class="blog-img-wrapper">
+                            <span class="blog-badge badge-career">Career</span>
+                            <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=600&q=80"
+                                alt="How I Started Web Development Cover" class="blog-img">
+                        </div>
+                        <div class="blog-info">
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-calendar"></i> July 25, 2026</span>
+                                <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+                            </div>
+                            <h4 class="blog-title">How I Started Web Development</h4>
+                            <p class="blog-intro">Sharing my personal journey as a computer science undergraduate
+                                stepping into the world of web engineering.</p>
+                            <button class="read-more-btn" data-blog-id="1">Read More <i
+                                    class="fa-solid fa-arrow-right-long ms-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog 2 -->
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-card">
+                        <div class="blog-img-wrapper gradient-cover-1 d-flex align-items-center justify-content-center">
+                            <span class="blog-badge badge-uiux">UI/UX</span>
+                            <i class="fa-solid fa-mobile-screen-button blog-cover-icon"></i>
+                        </div>
+                        <div class="blog-info">
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-calendar"></i> July 18, 2026</span>
+                                <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+                            </div>
+                            <h4 class="blog-title">Importance of Responsive Design</h4>
+                            <p class="blog-intro">Why fluid grid layouts, media queries, and mobile-first approach are
+                                critical for modern client websites.</p>
+                            <button class="read-more-btn" data-blog-id="2">Read More <i
+                                    class="fa-solid fa-arrow-right-long ms-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog 3 -->
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-card">
+                        <div class="blog-img-wrapper gradient-cover-2 d-flex align-items-center justify-content-center">
+                            <span class="blog-badge badge-tech">Engineering</span>
+                            <i class="fa-brands fa-js blog-cover-icon"></i>
+                        </div>
+                        <div class="blog-info">
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-calendar"></i> July 10, 2026</span>
+                                <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+                            </div>
+                            <h4 class="blog-title">Learning JavaScript Effectively</h4>
+                            <p class="blog-intro">Key tips, tools, and visual mental models to master ES6 concepts,
+                                closures, and async JS logic.</p>
+                            <button class="read-more-btn" data-blog-id="3">Read More <i
+                                    class="fa-solid fa-arrow-right-long ms-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog 4 -->
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="blog-card">
+                        <div class="blog-img-wrapper gradient-cover-3 d-flex align-items-center justify-content-center">
+                            <span class="blog-badge badge-branding">Design</span>
+                            <i class="fa-solid fa-pen-nib blog-cover-icon"></i>
+                        </div>
+                        <div class="blog-info">
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-calendar"></i> June 28, 2026</span>
+                                <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+                            </div>
+                            <h4 class="blog-title">Modern UI Design Tips</h4>
+                            <p class="blog-intro">How glassmorphism, depth-shadows, typography scale, and accent colors
+                                make a UI premium.</p>
+                            <button class="read-more-btn" data-blog-id="4">Read More <i
+                                    class="fa-solid fa-arrow-right-long ms-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer text-center">
+        <div class="container">
+            <p class="mb-0">Developed By <span class="text-accent">Anmol Akber</span> &copy; 2026. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="btn btn-primary" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Blog Detail Modal -->
+    <div class="modal fade" id="blogModal" tabindex="-1" aria-labelledby="blogModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content glass-card border border-light-subtle shadow-lg"
+                style="background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);">
+                <div class="modal-header border-0 pb-0 position-relative">
+                    <h3 class="modal-title text-white fw-bold mt-2" id="blogModalLabel">Blog Post Title</h3>
+                    <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                        data-bs-dismiss="modal" aria-label="Close" style="font-size: 1.2rem;"></button>
+                </div>
+                <div class="modal-body pt-3">
+                    <div class="modal-meta-info mb-4 d-flex align-items-center gap-3 text-secondary small">
+                        <span id="modal-blog-category" class="badge bg-primary text-white text-uppercase"
+                            style="letter-spacing: 1px; font-size: 0.65rem; padding: 5px 10px;">Category</span>
+                        <span id="modal-blog-date"><i class="fa-regular fa-calendar-days me-1"></i> Date</span>
+                        <span id="modal-blog-readtime"><i class="fa-regular fa-clock me-1"></i> Read Time</span>
+                    </div>
+                    <div id="modal-blog-content" class="modal-blog-content-body text-light">
+                        <!-- Blog post content goes here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation Library JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../script.js"></script>
+
+    <!-- Blog Local Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const blogPosts = {
+                1: {
+                    title: "How I Started Web Development",
+                    category: "Career",
+                    date: "July 25, 2026",
+                    readTime: "4 min read",
+                    content: `
+                        <p>Starting out in web development can feel overwhelming with the sheer number of tools, frameworks, and languages available. My journey began with the fundamental building blocks of the web: HTML5 and CSS3.</p>
+                        <p>Initially, I focused on structure and styling—understanding how elements flow in the document object model (DOM), how layout models like Flexbox and Grid behave, and how to create clean, responsive interfaces. This foundational stage taught me that design is not just how something looks, but how it works and adapts to different screen sizes.</p>
+                        <blockquote>"The best way to learn programming is to build things you actually want to use."</blockquote>
+                        <p>Soon after, I introduced JavaScript to add interactivity. Implementing features like theme switching, state tracking, and building client-side dynamic cards helped solidify my coding patterns. My main tip for beginners is simple: don't rush into complex frameworks like React or Next.js too early. Build a solid foundation in vanilla HTML, CSS, and JS first—it makes adopting modern libraries significantly easier.</p>
+                    `
+                },
+                2: {
+                    title: "Importance of Responsive Design",
+                    category: "UI/UX",
+                    date: "July 18, 2026",
+                    readTime: "5 min read",
+                    content: `
+                        <p>In today's digital landscape, users access web applications from a vast range of devices—from small-screen smartphones to ultra-wide desktop monitors. Responsive web design is no longer an optional feature; it is an absolute necessity.</p>
+                        <p>A successful responsive layout relies on three core pillars:</p>
+                        <ul>
+                            <li><strong>Fluid Grids:</strong> Using proportional sizing like percentages or viewport units instead of hardcoded pixel values.</li>
+                            <li><strong>Media Queries:</strong> Applying conditional CSS rules at specific break-points to rearrange layouts smoothly.</li>
+                            <li><strong>Flexible Images & Media:</strong> Restricting media widths to 100% to ensure they scale and never overflow their containers.</li>
+                        </ul>
+                        <p>Adopting a "mobile-first" approach is critical. By designing the structure for mobile screens first and layering on layouts as the viewport grows, you build leaner, faster-loading stylesheets that prioritize the core user experience.</p>
+                    `
+                },
+                3: {
+                    title: "Learning JavaScript Effectively",
+                    category: "Engineering",
+                    date: "July 10, 2026",
+                    readTime: "6 min read",
+                    content: `
+                        <p>JavaScript is the language of the modern web, but its asynchronous nature and language specifics can be challenging. To master JS, it is important to build strong mental models of its runtime execution.</p>
+                        <p>Here are key topics every engineer should focus on:</p>
+                        <ol>
+                            <li><strong>ES6+ Syntax:</strong> Arrow functions, destructuring, template literals, and modern array methods (map, filter, reduce).</li>
+                            <li><strong>Scope & Closures:</strong> Understanding lexical environments and how functions retain access to their outer scopes.</li>
+                            <li><strong>Asynchronous JS:</strong> Working with Callbacks, Promises, and the clean Async/Await syntax to handle fetch requests and APIs.</li>
+                        </ol>
+                        <p>When practicing, always try to implement logic yourself before relying on helper libraries. Building custom local state management systems, to-do applications with localStorage, and responsive interactive filters will make you a much stronger JavaScript engineer.</p>
+                    `
+                },
+                4: {
+                    title: "Modern UI Design Tips",
+                    category: "Design",
+                    date: "June 28, 2026",
+                    readTime: "4 min read",
+                    content: `
+                        <p>Creating a premium user interface involves subtle details that collectively elevate the overall user experience. Here are four essential tips to transform a basic design into a corporate-ready, state-of-the-art site:</p>
+                        <p><strong>1. Use Glassmorphism Strategically</strong><br>
+                        Combine semi-transparent backgrounds with a subtle backdrop filter blur and light border borders to create depth and focus.</p>
+                        <p><strong>2. Establish Typographical Hierarchy</strong><br>
+                        Differentiate headings, subheadings, and body content clearly by scaling font sizes, line heights, and weights (e.g., Montserrat for titles, Poppins for body text).</p>
+                        <p><strong>3. Tailor Harmonious Colors</strong><br>
+                        Avoid default primary colors. Rely on HSL-based palettes with custom deep gradients, and maintain a consistent primary brand accent color.</p>
+                        <p><strong>4. Implement Micro-Animations</strong><br>
+                        Add subtle hover states, smooth scaling, and icon translations to interactive elements to make the interface feel responsive and alive.</p>
+                    `
+                }
+            };
+
+            const blogModal = new bootstrap.Modal(document.getElementById('blogModal'));
+            const modalTitle = document.getElementById('blogModalLabel');
+            const modalCategory = document.getElementById('modal-blog-category');
+            const modalDate = document.getElementById('modal-blog-date');
+            const modalReadTime = document.getElementById('modal-blog-readtime');
+            const modalContent = document.getElementById('modal-blog-content');
+
+            document.querySelectorAll('.read-more-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const blogId = btn.getAttribute('data-blog-id');
+                    const post = blogPosts[blogId];
+                    if (post) {
+                        modalTitle.textContent = post.title;
+                        modalCategory.textContent = post.category;
+                        // Set dynamic color classes for badges
+                        modalCategory.className = 'badge text-white text-uppercase';
+                        if (post.category === 'Career') modalCategory.classList.add('badge-career');
+                        else if (post.category === 'UI/UX') modalCategory.classList.add('badge-uiux');
+                        else if (post.category === 'Engineering') modalCategory.classList.add('badge-tech');
+                        else modalCategory.classList.add('badge-branding');
+
+                        modalDate.innerHTML = `<i class="fa-regular fa-calendar-days me-1"></i> ${post.date}`;
+                        modalReadTime.innerHTML = `<i class="fa-regular fa-clock me-1"></i> ${post.readTime}`;
+                        modalContent.innerHTML = post.content;
+
+                        blogModal.show();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

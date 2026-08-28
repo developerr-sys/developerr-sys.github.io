@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List App</title>
+    <!-- To Do App Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Full-Width Top Navigation Bar -->
+    <nav class="standalone-nav">
+        <div class="nav-brand-box">
+            <span class="app-icon-emoji">📝</span>
+            <span class="app-title-text">To-Do List Web App</span>
+        </div>
+        <div class="nav-actions-box">
+            <a href="../pages/projects.html" class="back-projects-btn">
+                ← Back to Projects
+            </a>
+        </div>
+    </nav>
+
+    <!-- Background Ambient Glows -->
+    <div class="ambient-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-titles">
+                <h1>My Task Dashboard</h1>
+                <p class="subtitle">Manage your daily tasks easily</p>
+            </div>
+
+            <div class="header-actions-group">
+                <!-- Theme Selection Dropdown -->
+                <div class="theme-dropdown">
+                <button id="theme-menu-btn" class="btn-icon" aria-label="Select theme" aria-haspopup="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4" />
+                        <path d="M12 2v2" />
+                        <path d="M12 20v2" />
+                        <path d="m4.93 4.93 1.41 1.41" />
+                        <path d="m17.66 17.66 1.41 1.41" />
+                        <path d="M2 12h2" />
+                        <path d="M20 12h2" />
+                        <path d="m6.34 17.66-1.41 1.41" />
+                        <path d="m19.07 4.93-1.41 1.41" />
+                    </svg>
+                </button>
+                <div id="theme-menu" class="theme-menu-options">
+                    <button class="theme-option" data-theme="light">
+                        <span class="theme-preview light-preview"></span>
+                        <span>Light Mode</span>
+                    </button>
+                    <button class="theme-option" data-theme="dark">
+                        <span class="theme-preview dark-preview"></span>
+                        <span>Dark Mode</span>
+                    </button>
+                    <button class="theme-option" data-theme="emerald">
+                        <span class="theme-preview emerald-preview"></span>
+                        <span>Emerald</span>
+                    </button>
+                    <button class="theme-option" data-theme="sunset">
+                        <span class="theme-preview sunset-preview"></span>
+                        <span>Sunset</span>
+                    </button>
+                    <button class="theme-option" data-theme="ocean">
+                        <span class="theme-preview ocean-preview"></span>
+                        <span>Ocean</span>
+                    </button>
+                    <button class="theme-option" data-theme="dusk">
+                        <span class="theme-preview dusk-preview"></span>
+                        <span>Dusk</span>
+                    </button>
+                    <button class="theme-option" data-theme="autumn">
+                        <span class="theme-preview autumn-preview"></span>
+                        <span>Autumn</span>
+                    </button>
+                </div>
+            </div>
+            </div>
+        </header>
+
+        <!-- Add Task Section -->
+        <section class="add-task-section">
+            <div class="add-task-row main-row">
+                <label for="task-input" class="sr-only">Enter a new task</label>
+                <input type="text" id="task-input" placeholder="Enter a new task...">
+                <button id="add-task-btn" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14" />
+                        <path d="M12 5v14" />
+                    </svg>
+                    <span>Add Task</span>
+                </button>
+            </div>
+            <div class="add-task-row meta-row">
+                <div class="meta-item">
+                    <label for="task-priority" class="meta-label">Priority</label>
+                    <select id="task-priority" aria-label="Task priority">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                
+                <div class="meta-item">
+                    <label for="task-category" class="meta-label">Category</label>
+                    <select id="task-category" aria-label="Task category">
+                        <option value="Work" selected>💼 Work</option>
+                        <option value="Personal">🏠 Personal</option>
+                        <option value="Health">💪 Health</option>
+                        <option value="Finance">💰 Finance</option>
+                        <option value="Other">✨ Other</option>
+                    </select>
+                </div>
+                
+                <div class="meta-item">
+                    <label for="task-date" class="meta-label">Due Date</label>
+                    <input type="date" id="task-date" aria-label="Task due date">
+                </div>
+            </div>
+        </section>
+        <p id="validation-msg" class="validation-msg" aria-live="polite"></p>
+
+        <!-- Search & Sort Section -->
+        <section class="search-sort-section">
+            <div class="search-container">
+                <span class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.3-4.3" />
+                    </svg>
+                </span>
+                <label for="search-input" class="sr-only">Search tasks</label>
+                <input type="text" id="search-input" placeholder="Search tasks...">
+            </div>
+            
+            <div class="sort-container">
+                <label for="sort-select" class="sr-only">Sort Tasks</label>
+                <select id="sort-select" aria-label="Sort tasks">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="priority-desc">Priority: High to Low</option>
+                    <option value="priority-asc">Priority: Low to High</option>
+                    <option value="due-soon">Due Date: Soonest</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Filter Buttons -->
+        <section class="filter-section">
+            <button class="btn-filter active" data-filter="all">All</button>
+            <button class="btn-filter" data-filter="active">Active</button>
+            <button class="btn-filter" data-filter="completed">Completed</button>
+        </section>
+
+        <!-- Progress Tracker Section -->
+        <section class="progress-section">
+            <div class="progress-container">
+                <div class="progress-bar-header">
+                    <span>Task Completion</span>
+                    <strong id="progress-percent">0%</strong>
+                </div>
+                <div class="progress-bar-track">
+                    <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="stats-section">
+            <div class="stat-item"><span>Total</span> <strong id="total-tasks">0</strong></div>
+            <div class="stat-item"><span>Active</span> <strong id="active-tasks">0</strong></div>
+            <div class="stat-item"><span>Completed</span> <strong id="completed-tasks">0</strong></div>
+        </section>
+
+        <!-- Task List -->
+        <main class="task-list-container">
+            <ul id="task-list" aria-live="polite"></ul>
+            <div id="empty-state" class="empty-state hidden">
+                <div class="empty-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="18" height="18" x="3" y="3" rx="2" />
+                        <path d="m9 12 2 2 4-4" />
+                    </svg>
+                </div>
+                <h3>All caught up!</h3>
+                <p>No tasks found. Add a new task to get started.</p>
+            </div>
+        </main>
+
+        <!-- Clear Completed -->
+        <section class="clear-section">
+            <button id="clear-completed-btn" class="btn btn-danger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 6h18" />
+                    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
+                    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
+                    <line x1="10" x2="10" y1="11" y2="17" />
+                    <line x1="14" x2="14" y1="11" y2="17" />
+                </svg>
+                <span>Clear Completed</span>
+            </button>
+        </section>
+    </div>
+
+    <!-- Custom Confirm Modal -->
+    <div id="confirm-modal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <h3 id="modal-title">Confirm Action</h3>
+            <p id="modal-message">Are you sure you want to proceed?</p>
+            <div class="modal-actions">
+                <button id="modal-cancel-btn" class="btn btn-secondary">Cancel</button>
+                <button id="modal-confirm-btn" class="btn btn-primary-danger">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" aria-live="assertive"></div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

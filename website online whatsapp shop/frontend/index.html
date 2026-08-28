@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate a premium WhatsApp catalog website in minutes.">
+    <title>WhatsApp Shop Generator - Create Your Shop in 2 Minutes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="generator-body">
+    <!-- Clean Standalone Header Navbar -->
+    <nav class="standalone-nav">
+        <div class="nav-brand-box">
+            <span class="shop-logo-icon">🛍️</span>
+            <span class="shop-brand-name">WhatsApp Shop Generator</span>
+        </div>
+        <a href="../../pages/projects.html" class="back-projects-btn">
+            ← Back to Projects
+        </a>
+    </nav>
+
+    <div class="glass-bg"></div>
+    <div class="container">
+        <header class="hero">
+            <div class="badge">Version 2.0 ✨</div>
+            <h1>Create Your Premium Shop in <span class="highlight">2 Minutes</span></h1>
+            <p>Empower your business. Generate a sleek, modern catalog, customize your theme, and receive orders directly on WhatsApp.</p>
+        </header>
+
+        <main class="generator-card">
+            <div class="card-header">
+                <h2>Store Details</h2>
+                <p>Let's build something beautiful</p>
+            </div>
+
+            <form id="shopForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="shopName">Shop Name</label>
+                        <input type="text" id="shopName" name="shopName" placeholder="e.g. My Awesome Store" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="whatsappNumber">WhatsApp Number (with country code)</label>
+                        <input type="text" id="whatsappNumber" name="whatsappNumber" placeholder="e.g. 1234567890" required>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="shopDescription">Shop Description (Optional)</label>
+                    <textarea id="shopDescription" name="shopDescription" rows="3" placeholder="Tell your customers about your business, what you sell, and why they should buy from you..."></textarea>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group theme-selector-group">
+                        <label for="theme">Select Shop Theme</label>
+                        <div class="custom-select-wrapper">
+                            <select id="theme" name="theme" class="theme-select">
+                                <option value="theme-whatsapp-green">WhatsApp Green (Classic)</option>
+                                <option value="theme-sleek-dark">Sleek Dark (Modern)</option>
+                                <option value="theme-modern-blue">Modern Blue (Trustworthy)</option>
+                                <option value="theme-vibrant-sunset">Vibrant Sunset (Energetic)</option>
+                                <option value="theme-elegant-purple">Elegant Purple (Luxury)</option>
+                                <option value="theme-midnight-ocean">Midnight Ocean (Deep)</option>
+                                <option value="theme-forest-mint">Forest Mint (Fresh)</option>
+                                <option value="theme-cherry-blossom">Cherry Blossom (Soft)</option>
+                                <option value="theme-neon-cyberpunk">Neon Cyberpunk (Futuristic)</option>
+                                <option value="theme-minimal-light">Minimal Light (Clean)</option>
+                                <option value="theme-coffee-mocha">Coffee Mocha (Warm)</option>
+                                <option value="theme-ocean-breeze">Ocean Breeze (Calm)</option>
+                                <option value="theme-coral-reef">Coral Reef (Playful)</option>
+                                <option value="theme-luxury-gold">Luxury Gold (Premium)</option>
+                                <option value="theme-slate-grey">Slate Grey (Professional)</option>
+                                <option value="theme-emerald-city">Emerald City (Rich)</option>
+                                <option value="theme-royal-crimson">Royal Crimson (Bold)</option>
+                                <option value="theme-pastel-dream">Pastel Dream (Sweet)</option>
+                                <option value="theme-matcha-latte">Matcha Latte (Organic)</option>
+                                <option value="theme-volcanic-ash">Volcanic Ash (Monochrome)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group theme-selector-group" style="background: rgba(3b, 130, 246, 0.05); border-color: rgba(59, 130, 246, 0.1);">
+                        <label for="currency">Shop Currency</label>
+                        <div class="custom-select-wrapper">
+                            <select id="currency" name="currency" class="theme-select">
+                                <option value="$">US Dollar ($)</option>
+                                <option value="€">Euro (€)</option>
+                                <option value="£">British Pound (£)</option>
+                                <option value="Rs.">Pakistani Rupee (Rs.)</option>
+                                <option value="₹">Indian Rupee (₹)</option>
+                                <option value="¥">Japanese Yen (¥)</option>
+                                <option value="A$">Aus Dollar (A$)</option>
+                                <option value="C$">Can Dollar (C$)</option>
+                                <option value="R">South African Rand (R)</option>
+                                <option value="₦">Nigerian Naira (₦)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products-section">
+                    <div class="section-header">
+                        <h3>Inventory</h3>
+                        <p>Add the products you want to sell</p>
+                    </div>
+                    <div id="product-list">
+                        <!-- Product Item 1 -->
+                        <div class="product-item">
+                            <div class="product-item-header">
+                                <h4>Product #1</h4>
+                            </div>
+                            <div class="product-grid">
+                                <div class="form-group">
+                                    <label>Product Name</label>
+                                    <input type="text" name="productNames" placeholder="Product name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Price (Numbers Only)</label>
+                                    <input type="number" step="0.01" min="0" name="productPrices" placeholder="e.g. 20.99" required>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label>Category</label>
+                                    <input type="text" name="productCategories" placeholder="e.g. Clothing, Electronics, Food" required>
+                                </div>
+                                <div class="form-group full-width file-input-group">
+                                    <label>Product Image (Optional)</label>
+                                    <input type="file" name="productImages" accept="image/*" class="file-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="addProductBtn" class="btn btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        Add Another Product
+                    </button>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="submitBtn" class="btn btn-primary">
+                        <span>Generate Shop</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+                </div>
+            </form>
+            <div id="statusMessage" class="status-message"></div>
+
+            <div class="demo-stores-banner" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px dashed rgba(255,255,255,0.15); text-align: center;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: #cbd5e1;">🛍️ Or Explore Sample Ready-Made Shops</h3>
+                <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 1.2rem;">Click any sample shop below to preview live WhatsApp catalog & cart functionality instantly:</p>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <a href="shop.html?name=demo" class="btn btn-secondary" style="width: auto; text-decoration: none; font-size: 0.95rem; padding: 0.6rem 1.2rem;">⚡ TechVerse Store</a>
+                    <a href="shop.html?name=designer" class="btn btn-secondary" style="width: auto; text-decoration: none; font-size: 0.95rem; padding: 0.6rem 1.2rem;">👗 Designer Apparel</a>
+                    <a href="shop.html?name=coffee-express" class="btn btn-secondary" style="width: auto; text-decoration: none; font-size: 0.95rem; padding: 0.6rem 1.2rem;">☕ Artisan Coffee & Bakery</a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="store.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

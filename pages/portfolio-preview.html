@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmol Akber | Portfolio Project Preview</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .preview-container {
+            max-width: 1100px;
+            margin: 120px auto 50px auto;
+            padding: 0 15px;
+        }
+
+        .preview-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 30px;
+        }
+
+        @media (max-width: 992px) {
+            .preview-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .iframe-wrapper {
+            background: #000;
+            border-radius: 20px;
+            border: 8px solid var(--color-card-border);
+            overflow: hidden;
+            box-shadow: var(--color-card-shadow);
+            aspect-ratio: 16/10;
+            position: relative;
+        }
+
+        .live-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: var(--color-bg-base);
+        }
+
+        .spec-card {
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--color-card-shadow);
+            height: fit-content;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(var(--color-primary-rgb), 0.1);
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            color: var(--color-text-primary);
+            font-size: 0.95rem;
+            margin-bottom: 3px;
+        }
+
+        .feature-desc {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
+        .preview-title {
+            color: var(--color-text-primary);
+        }
+
+        .preview-divider {
+            border-color: var(--color-card-border);
+        }
+    </style>
+</head>
+
+<body class="light-mode">
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar-main" class="navbar navbar-expand-xl fixed-top navbar-scrolled">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <div class="brand-logo-container">
+                    <span class="brand-icon-box"><i class="fa-solid fa-code"></i></span>
+                    <span class="brand-text">Anmol<span class="text-accent">Akber</span></span>
+                </div>
+            </a>
+            <div class="d-flex align-items-center order-xl-3 gap-2">
+                <button id="theme-toggle" class="btn btn-theme" aria-label="Toggle dark/light theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="projects.html" class="btn btn-primary btn-gradient btn-sm btn-nav-back ms-2 d-none d-sm-inline-flex">
+                    <i class="fa-solid fa-arrow-left me-2"></i>Back to Projects
+                </a>
+                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse justify-content-center order-xl-2" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="why-me.html">Why Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="preview-container">
+        <div class="text-center mb-4" data-aos="fade-up">
+            <span class="section-subtitle">Project Live Showcase</span>
+            <h2 class="section-title">Personal Portfolio Website</h2>
+            <div class="title-bar mx-auto"></div>
+        </div>
+
+        <div class="preview-layout" data-aos="fade-up" data-aos-delay="100">
+            <!-- Left Frame -->
+            <div class="iframe-wrapper">
+                <iframe src="../index.html" class="live-iframe" title="Anmol Akber Live Portfolio Homepage"></iframe>
+            </div>
+
+            <!-- Right Spec Card -->
+            <div class="spec-card glass-card">
+                <h5 class="preview-title mb-4 fw-700">Interactive Tour</h5>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <div>
+                        <h6 class="feature-title">Fully Responsive Layout</h6>
+                        <p class="feature-desc">Interactive viewport testing shows optimized styling across five custom
+                            breakpoints (Desktop down to 400px mobile phones).</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                    <div>
+                        <h6 class="feature-title">Dynamic Dark/Light Theme</h6>
+                        <p class="feature-desc">Strict variable mapping enables toggle transitions across all styling
+                            grids without reload delays.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <div>
+                        <h6 class="feature-title">Optimized Client Logic</h6>
+                        <p class="feature-desc">Structured in clean vanilla Javascript supporting particle background
+                            canvas engines, numerical count animations, and contact triggers.</p>
+                    </div>
+                </div>
+
+                <hr class="my-4 preview-divider">
+
+                <a href="../index.html" class="btn btn-primary w-100 mb-2">
+                    <i class="fa-solid fa-external-link me-2"></i>Open Full Page
+                </a>
+                <a href="projects.html" class="btn btn-outline-primary w-100">
+                    <i class="fa-solid fa-arrow-left me-2"></i>Back to Projects
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer text-center">
+        <div class="container">
+            <p class="mb-0">Developed By <span class="text-accent">Anmol Akber</span> &copy; 2026. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Theme Toggler -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 800, once: true });
+
+            // Sync theme
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const icon = themeToggleBtn.querySelector('i');
+
+            if (localStorage.getItem('theme') === 'dark' ||
+                (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+                icon.className = 'fa-solid fa-sun';
+            } else {
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+                icon.className = 'fa-solid fa-moon';
+            }
+
+            themeToggleBtn.addEventListener('click', () => {
+                if (document.body.classList.contains('dark-mode')) {
+                    document.body.classList.replace('dark-mode', 'light-mode');
+                    localStorage.setItem('theme', 'light');
+                    icon.className = 'fa-solid fa-moon';
+                } else {
+                    document.body.classList.replace('light-mode', 'dark-mode');
+                    localStorage.setItem('theme', 'dark');
+                    icon.className = 'fa-solid fa-sun';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
