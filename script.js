@@ -15,21 +15,17 @@ window.addEventListener('error', (event) => {
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ==========================================================================
-       UNIFIED THEME SYSTEM (MODE + COLOR PALETTE)
+       UNIFIED THEME SYSTEM (COLOR PALETTE)
        ========================================================================== */
     const themePickerFab = document.getElementById('theme-picker-fab');
     const themePickerPanel = document.getElementById('theme-picker-panel');
     const themeSwatches = document.querySelectorAll('.theme-swatch');
-    const modeBtns = document.querySelectorAll('.mode-btn');
 
-    // 1. Initial State Restoration
-    const currentMode = 'dark';
+    // 1. Initial State Restoration & Enforce Dark Mode
+    document.body.classList.add('dark-mode');
+    localStorage.setItem('theme', 'dark');
     const savedColorTheme = localStorage.getItem('colorTheme') || 'default';
 
-    // Apply Mode Class to Body
-    applyMode('dark');
-
-    // Apply Accent Color Theme Class to Body
     if (savedColorTheme !== 'default') {
         document.body.classList.add(`theme-${savedColorTheme}`);
     }
@@ -46,14 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 themePickerPanel.classList.remove('active');
             }
         });
-    }
-
-    // 3. Enforce Dark Mode
-    document.body.classList.add('dark-mode');
-    localStorage.setItem('theme', 'dark');
-    const currentColorTheme = localStorage.getItem('colorTheme') || 'default';
-    if (currentColorTheme !== 'default') {
-        document.body.classList.add(`theme-${currentColorTheme}`);
     }
 
     // 4. Handle Color Theme Swatches
