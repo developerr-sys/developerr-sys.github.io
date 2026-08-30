@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 
-<body class="light-mode">
+<body class="dark-mode">
 
     <!-- Scroll Progress Indicator -->
     <div id="scroll-progress"></div>
@@ -47,11 +47,49 @@
                     <span class="brand-text">Anmol<span class="text-accent">Akber</span></span>
                 </div>
             </a>
-            <div class="d-flex align-items-center order-xl-3">
-                <!-- Theme Toggle Button -->
-                <button id="theme-toggle" class="btn btn-theme" aria-label="Toggle dark/light theme">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
+            <div class="d-flex align-items-center order-xl-3 gap-2">
+                <!-- Unified Theme & Appearance Controls -->
+                <div class="theme-picker-wrapper">
+                    <button class="btn-theme-palette" id="theme-picker-fab" aria-label="Theme & Appearance Settings"
+                        title="Appearance Settings">
+                        <i class="fa-solid fa-palette"></i>
+                    </button>
+                    <div class="theme-picker-panel" id="theme-picker-panel">
+                        <!-- Color Palette Section -->
+                        <div class="theme-section">
+                            <h6 class="theme-section-title"><i class="fa-solid fa-swatchbook me-1"></i>Color Palette
+                            </h6>
+                            <div class="theme-swatches">
+                                <div class="theme-swatch swatch-default active-swatch" data-theme="default"
+                                    data-label="Default" title="Default Blue"></div>
+                                <div class="theme-swatch swatch-emerald" data-theme="emerald" data-label="Emerald"
+                                    title="Emerald"></div>
+                                <div class="theme-swatch swatch-rose" data-theme="rose" data-label="Rose" title="Rose">
+                                </div>
+                                <div class="theme-swatch swatch-amber" data-theme="amber" data-label="Amber"
+                                    title="Amber"></div>
+                                <div class="theme-swatch swatch-violet" data-theme="violet" data-label="Violet"
+                                    title="Violet"></div>
+                                <div class="theme-swatch swatch-cyan" data-theme="cyan" data-label="Cyan" title="Cyan">
+                                </div>
+                                <div class="theme-swatch swatch-coral" data-theme="coral" data-label="Coral"
+                                    title="Coral"></div>
+                                <div class="theme-swatch swatch-indigo" data-theme="indigo" data-label="Indigo"
+                                    title="Indigo"></div>
+                                <div class="theme-swatch swatch-teal" data-theme="teal" data-label="Teal" title="Teal">
+                                </div>
+                                <div class="theme-swatch swatch-crimson" data-theme="crimson" data-label="Crimson"
+                                    title="Crimson"></div>
+                                <div class="theme-swatch swatch-lime" data-theme="lime" data-label="Lime" title="Lime">
+                                </div>
+                                <div class="theme-swatch swatch-sky" data-theme="sky" data-label="Sky" title="Sky">
+                                </div>
+                                <div class="theme-swatch swatch-fuchsia" data-theme="fuchsia" data-label="Fuchsia"
+                                    title="Fuchsia"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

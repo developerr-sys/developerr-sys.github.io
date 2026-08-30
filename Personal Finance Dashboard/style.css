@@ -15,13 +15,6 @@
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body.light-mode {
-    --color-bg-base: #f1f5f9;
-    --color-text-primary: #0f172a;
-    --color-text-secondary: #64748b;
-    --color-card-bg: rgba(255, 255, 255, 0.85);
-    --color-card-border: rgba(0, 0, 0, 0.08);
-}
 
 body {
     font-family: var(--font-primary);
@@ -85,14 +78,7 @@ body {
     white-space: nowrap;
 }
 
-.back-projects-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.45);
-}
 
-body.light-mode .finance-header {
-    background: rgba(255, 255, 255, 0.9);
-}
 
 .brand-text {
     font-family: var(--font-heading);
@@ -127,10 +113,6 @@ body.light-mode .finance-header {
     border: 1px solid var(--color-card-border);
     background: rgba(255, 255, 255, 0.03);
     transition: var(--transition-smooth);
-}
-
-body.light-mode .stat-box {
-    background: rgba(0, 0, 0, 0.02);
 }
 
 .stat-box:hover {
@@ -178,10 +160,6 @@ body.light-mode .stat-box {
     outline: none;
     transition: var(--transition-smooth);
     box-sizing: border-box;
-}
-
-body.light-mode .finance-input {
-    background: rgba(0, 0, 0, 0.04);
 }
 
 .finance-input:focus {

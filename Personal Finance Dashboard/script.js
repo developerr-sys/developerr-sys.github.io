@@ -1,32 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Theme Toggle
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeIcon = themeToggleBtn.querySelector('i');
-
-    function applyTheme(isDark) {
-        if (isDark) {
-            document.body.classList.remove('light-mode');
-            themeIcon.className = 'fa-solid fa-sun';
-            localStorage.setItem('finance-theme', 'dark');
-        } else {
-            document.body.classList.add('light-mode');
-            themeIcon.className = 'fa-solid fa-moon';
-            localStorage.setItem('finance-theme', 'light');
-        }
-    }
-
-    const savedTheme = localStorage.getItem('finance-theme');
-    if (savedTheme === 'light') {
-        applyTheme(false);
-    } else {
-        applyTheme(true);
-    }
-
-    themeToggleBtn.addEventListener('click', () => {
-        const isDark = !document.body.classList.contains('light-mode');
-        applyTheme(!isDark);
-    });
-
     // Finance Tracker Logic
     const form = document.getElementById('transaction-form');
     const titleInput = document.getElementById('trans-title');

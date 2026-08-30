@@ -468,7 +468,10 @@ function setTheme(theme) {
 // ==========================================
 
 function init() {
-    const savedTheme = localStorage.getItem('appTheme') || 'light';
+    let savedTheme = localStorage.getItem('appTheme');
+    if (!savedTheme || savedTheme === 'light') {
+        savedTheme = 'dark';
+    }
     setTheme(savedTheme);
 
     loadTasks();

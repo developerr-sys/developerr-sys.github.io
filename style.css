@@ -7,27 +7,27 @@
     --font-primary: 'Poppins', sans-serif;
     --font-heading: 'Montserrat', sans-serif;
 
-    /* Light Mode Variables */
-    --color-primary: #0A66C2;
-    --color-primary-rgb: 10, 102, 194;
-    --color-secondary: #111827;
-    --color-accent: #2563EB;
-    --color-accent-rgb: 37, 99, 235;
-    --color-bg-base: #FFFFFF;
-    --color-bg-section: #F8FAFC;
-    --color-text-primary: #1E293B;
-    --color-text-secondary: #64748B;
-    --color-card-bg: rgba(255, 255, 255, 0.75);
-    --color-card-border: rgba(226, 232, 240, 0.8);
-    --color-card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
-    --color-navbar-bg: rgba(255, 255, 255, 0.85);
-    --color-navbar-border: rgba(226, 232, 240, 0.5);
+    /* Dark Mode Variables (Default Theme) */
+    --color-primary: #3B82F6;
+    --color-primary-rgb: 59, 130, 246;
+    --color-secondary: #F9FAFB;
+    --color-accent: #60A5FA;
+    --color-accent-rgb: 96, 165, 250;
+    --color-bg-base: #0B0F19;
+    --color-bg-section: #111827;
+    --color-text-primary: #F3F4F6;
+    --color-text-secondary: #9CA3AF;
+    --color-card-bg: rgba(17, 24, 39, 0.75);
+    --color-card-border: rgba(255, 255, 255, 0.08);
+    --color-card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    --color-navbar-bg: rgba(11, 15, 25, 0.85);
+    --color-navbar-border: rgba(255, 255, 255, 0.05);
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #0A66C2 0%, #2563EB 100%);
-    --gradient-blob-1: rgba(10, 102, 194, 0.15);
-    --gradient-blob-2: rgba(37, 99, 235, 0.15);
-    --gradient-blob-3: rgba(147, 197, 253, 0.2);
+    --gradient-primary: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+    --gradient-blob-1: rgba(59, 130, 246, 0.12);
+    --gradient-blob-2: rgba(96, 165, 250, 0.12);
+    --gradient-blob-3: rgba(30, 41, 59, 0.3);
 
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2359,10 +2359,6 @@ a {
     height: 100%;
     border: 0;
     filter: grayscale(1) invert(0.9) contrast(1.2);
-}
-
-.light-mode .map-container iframe {
-    filter: grayscale(0.5) contrast(1);
 }
 
 .social-links-wrapper {

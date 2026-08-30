@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const modeBtns = document.querySelectorAll('.mode-btn');
 
     // 1. Initial State Restoration
-    const currentMode = localStorage.getItem('theme') || 'light';
+    const currentMode = 'dark';
     const savedColorTheme = localStorage.getItem('colorTheme') || 'default';
 
     // Apply Mode Class to Body
-    applyMode(currentMode);
+    applyMode('dark');
 
     // Apply Accent Color Theme Class to Body
     if (savedColorTheme !== 'default') {
@@ -48,34 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Handle Mode Switcher (Light / Dark)
-    if (modeBtns.length > 0) {
-        // Highlight active mode button on load
-        modeBtns.forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.mode === currentMode);
-            btn.addEventListener('click', () => {
-                const targetMode = btn.dataset.mode;
-                applyMode(targetMode);
-                localStorage.setItem('theme', targetMode);
-
-                modeBtns.forEach(b => b.classList.toggle('active', b.dataset.mode === targetMode));
-            });
-        });
-    }
-
-    function applyMode(mode) {
-        if (mode === 'dark') {
-            document.body.classList.remove('light-mode');
-            document.body.classList.add('dark-mode');
-        } else {
-            document.body.classList.remove('dark-mode');
-            document.body.classList.add('light-mode');
-        }
-        // Preserve active accent theme
-        const currentColorTheme = localStorage.getItem('colorTheme') || 'default';
-        if (currentColorTheme !== 'default') {
-            document.body.classList.add(`theme-${currentColorTheme}`);
-        }
+    // 3. Enforce Dark Mode
+    document.body.classList.add('dark-mode');
+    localStorage.setItem('theme', 'dark');
+    const currentColorTheme = localStorage.getItem('colorTheme') || 'default';
+    if (currentColorTheme !== 'default') {
+        document.body.classList.add(`theme-${currentColorTheme}`);
     }
 
     // 4. Handle Color Theme Swatches
@@ -511,9 +489,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             draw() {
-                // Color dynamically matches current active theme
-                const currentThemeActive = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-                this.color = currentThemeActive === 'dark' ? 'rgba(96, 165, 250, 0.25)' : 'rgba(10, 102, 194, 0.18)';
+                // Color dynamically matches active dark theme
+                this.color = 'rgba(96, 165, 250, 0.25)';
 
                 ctx.fillStyle = this.color;
                 ctx.beginPath();
