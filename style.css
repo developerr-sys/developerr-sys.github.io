@@ -34,21 +34,21 @@
     --transition-card: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
 
     /* ── Fluid Typography Scale (320px → 1200px) ─────────────────────── */
-    --fs-hero-name: clamp(1.75rem, 4vw + 0.5rem, 4rem);
-    --fs-hero-typed: clamp(1rem, 2vw + 0.4rem, 1.8rem);
-    --fs-hero-greeting: clamp(0.85rem, 1vw + 0.3rem, 1.2rem);
-    --fs-hero-desc: clamp(0.88rem, 0.6vw + 0.6rem, 1.1rem);
-    --fs-section-title: clamp(1.5rem, 3vw + 0.3rem, 2.5rem);
-    --fs-section-subtitle: clamp(0.7rem, 0.5vw + 0.4rem, 0.9rem);
-    --fs-body: clamp(0.88rem, 0.3vw + 0.7rem, 1rem);
-    --fs-card-title: clamp(1rem, 0.8vw + 0.5rem, 1.35rem);
-    --fs-card-desc: clamp(0.84rem, 0.3vw + 0.6rem, 0.96rem);
-    --fs-btn: clamp(0.82rem, 0.3vw + 0.6rem, 1rem);
-    --fs-small: clamp(0.72rem, 0.2vw + 0.55rem, 0.85rem);
-    --fs-stat-number: clamp(1.5rem, 2vw + 0.5rem, 2.2rem);
-    --fs-about-greeting: clamp(1.2rem, 1.5vw + 0.5rem, 1.7rem);
-    --fs-nav-link: clamp(0.82rem, 0.3vw + 0.6rem, 0.95rem);
-    --fs-brand: clamp(1.05rem, 0.5vw + 0.7rem, 1.35rem);
+    --fs-hero-name: clamp(1.3rem, 5vw + 0.5rem, 4rem);
+    --fs-hero-typed: clamp(0.85rem, 3vw + 0.4rem, 1.8rem);
+    --fs-hero-greeting: clamp(0.75rem, 2vw + 0.3rem, 1.2rem);
+    --fs-hero-desc: clamp(0.75rem, 1vw + 0.5rem, 1.1rem);
+    --fs-section-title: clamp(1.25rem, 4vw + 0.3rem, 2.5rem);
+    --fs-section-subtitle: clamp(0.65rem, 1vw + 0.4rem, 0.9rem);
+    --fs-body: clamp(0.75rem, 1vw + 0.5rem, 1rem);
+    --fs-card-title: clamp(0.9rem, 1.5vw + 0.5rem, 1.35rem);
+    --fs-card-desc: clamp(0.75rem, 1vw + 0.5rem, 0.96rem);
+    --fs-btn: clamp(0.75rem, 1vw + 0.5rem, 1rem);
+    --fs-small: clamp(0.65rem, 0.5vw + 0.55rem, 0.85rem);
+    --fs-stat-number: clamp(1.2rem, 3vw + 0.5rem, 2.2rem);
+    --fs-about-greeting: clamp(1.1rem, 2vw + 0.5rem, 1.7rem);
+    --fs-nav-link: clamp(0.75rem, 1vw + 0.5rem, 0.95rem);
+    --fs-brand: clamp(0.85rem, 1.5vw + 0.5rem, 1.35rem);
 }
 
 .dark-mode {
@@ -2304,14 +2304,22 @@ a {
     margin-bottom: 2px;
 }
 
+.detail-info {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
 .detail-info a,
 .detail-info p {
-    font-size: 0.95rem;
+    font-size: var(--fs-body);
     font-weight: 600;
     color: var(--color-text-primary);
     margin-bottom: 0;
     text-decoration: none;
     transition: color 0.3s ease;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .detail-info a:hover {
@@ -3292,11 +3300,11 @@ a {
     }
 
     .brand-text {
-        font-size: 1.1rem;
+        font-size: var(--fs-brand);
     }
 
     .stat-card h3 {
-        font-size: 1.6rem;
+        font-size: var(--fs-stat-number);
     }
 
     .contact-form-wrapper {
@@ -3335,6 +3343,46 @@ a {
     /* Hide floating badges on very small screens */
     .floating-badge {
         display: none;
+    }
+}
+
+/* ── XXS Breakpoint: Ultra-small Phones (≤360px) ───────────────────────── */
+@media (max-width: 360px) {
+    .container {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .brand-icon-box {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+
+    .btn-theme-palette,
+    .navbar-toggler {
+        width: 34px;
+        height: 34px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contact-detail-item {
+        padding: 12px 10px;
+    }
+
+    .detail-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+        margin-right: 10px;
+    }
+
+    .response-badge {
+        font-size: 0.72rem;
+        padding: 4px 10px;
     }
 }
 
