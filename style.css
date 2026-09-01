@@ -32,6 +32,23 @@
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-card: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+
+    /* ── Fluid Typography Scale (320px → 1200px) ─────────────────────── */
+    --fs-hero-name: clamp(1.75rem, 4vw + 0.5rem, 4rem);
+    --fs-hero-typed: clamp(1rem, 2vw + 0.4rem, 1.8rem);
+    --fs-hero-greeting: clamp(0.85rem, 1vw + 0.3rem, 1.2rem);
+    --fs-hero-desc: clamp(0.88rem, 0.6vw + 0.6rem, 1.1rem);
+    --fs-section-title: clamp(1.5rem, 3vw + 0.3rem, 2.5rem);
+    --fs-section-subtitle: clamp(0.7rem, 0.5vw + 0.4rem, 0.9rem);
+    --fs-body: clamp(0.88rem, 0.3vw + 0.7rem, 1rem);
+    --fs-card-title: clamp(1rem, 0.8vw + 0.5rem, 1.35rem);
+    --fs-card-desc: clamp(0.84rem, 0.3vw + 0.6rem, 0.96rem);
+    --fs-btn: clamp(0.82rem, 0.3vw + 0.6rem, 1rem);
+    --fs-small: clamp(0.72rem, 0.2vw + 0.55rem, 0.85rem);
+    --fs-stat-number: clamp(1.5rem, 2vw + 0.5rem, 2.2rem);
+    --fs-about-greeting: clamp(1.2rem, 1.5vw + 0.5rem, 1.7rem);
+    --fs-nav-link: clamp(0.82rem, 0.3vw + 0.6rem, 0.95rem);
+    --fs-brand: clamp(1.05rem, 0.5vw + 0.7rem, 1.35rem);
 }
 
 .dark-mode {
@@ -524,6 +541,7 @@ body {
     overflow-x: hidden;
     transition: background-color 0.5s ease, color 0.5s ease;
     line-height: 1.6;
+    font-size: var(--fs-body);
 }
 
 h1,
@@ -594,7 +612,7 @@ a {
 }
 
 .section-subtitle {
-    font-size: 0.9rem;
+    font-size: var(--fs-section-subtitle);
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 2px;
@@ -604,7 +622,7 @@ a {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: var(--fs-section-title);
     font-weight: 800;
     margin-bottom: 15px;
 }
@@ -624,6 +642,7 @@ a {
     color: white;
     font-weight: 500;
     padding: 12px 28px;
+    font-size: var(--fs-btn);
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(var(--color-primary-rgb), 0.3);
     transition: var(--transition-smooth);
@@ -640,6 +659,7 @@ a {
     color: var(--color-primary);
     font-weight: 500;
     padding: 10px 28px;
+    font-size: var(--fs-btn);
     border-radius: 8px;
     background: transparent;
     transition: var(--transition-smooth);
@@ -713,7 +733,7 @@ a {
 }
 
 .brand-text {
-    font-size: 1.35rem;
+    font-size: var(--fs-brand);
     font-weight: 800;
     color: var(--color-text-primary);
     letter-spacing: -0.5px;
@@ -731,7 +751,7 @@ a {
 .navbar-nav .nav-link {
     color: var(--color-text-primary);
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: var(--fs-nav-link);
     margin: 0 10px;
     position: relative;
     padding: 6px 0;
@@ -1011,26 +1031,28 @@ a {
 }
 
 .sub-greeting {
-    font-size: 1.2rem;
+    font-size: var(--fs-hero-greeting);
     color: var(--color-primary);
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: clamp(1.5px, 0.3vw, 3px);
     margin-bottom: 12px;
 }
 
 .main-name {
-    font-size: 4rem;
+    font-size: var(--fs-hero-name);
     font-weight: 800;
     margin-bottom: 15px;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .typed-wrapper {
-    font-size: 1.8rem;
+    font-size: var(--fs-hero-typed);
     font-weight: 600;
     margin-bottom: 20px;
     color: var(--color-text-primary);
@@ -1054,7 +1076,7 @@ a {
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: var(--fs-hero-desc);
     margin-bottom: 30px;
     max-width: 600px;
 }
@@ -1064,12 +1086,12 @@ a {
    ========================================================================== */
 
 .about-greeting {
-    font-size: 1.7rem;
+    font-size: var(--fs-about-greeting);
     margin-bottom: 20px;
 }
 
 .about-text {
-    font-size: 1.05rem;
+    font-size: var(--fs-body);
     margin-bottom: 15px;
     text-align: justify;
 }
@@ -1094,7 +1116,7 @@ a {
 }
 
 .stat-card h3 {
-    font-size: 2.2rem;
+    font-size: var(--fs-stat-number);
     font-weight: 800;
     margin-bottom: 5px;
 }
@@ -1196,7 +1218,7 @@ a {
 }
 
 .timeline-title {
-    font-size: 1.3rem;
+    font-size: var(--fs-card-title);
     margin-bottom: 8px;
 }
 
@@ -1233,7 +1255,7 @@ a {
 }
 
 .stat-number {
-    font-size: 1.6rem;
+    font-size: var(--fs-stat-number);
     font-weight: 700;
     color: var(--color-text-primary);
 }
@@ -1283,7 +1305,7 @@ a {
 }
 
 .category-title {
-    font-size: 1.35rem;
+    font-size: var(--fs-card-title);
     font-weight: 700;
     margin-bottom: 25px;
     border-bottom: 2px dashed var(--color-card-border);
@@ -1417,6 +1439,7 @@ a {
     background: var(--color-card-bg);
     color: var(--color-text-primary);
     padding: 8px 20px;
+    font-size: var(--fs-btn);
     border-radius: 30px;
     font-weight: 500;
     box-shadow: var(--color-card-shadow);
@@ -1781,7 +1804,7 @@ a {
 }
 
 .project-title {
-    font-size: 1.3rem;
+    font-size: var(--fs-card-title);
     margin-bottom: 12px;
 }
 
@@ -1866,7 +1889,7 @@ a {
 }
 
 .job-role {
-    font-size: 1.5rem;
+    font-size: var(--fs-card-title);
     font-weight: 700;
 }
 
@@ -1941,7 +1964,7 @@ a {
 }
 
 .achievement-title {
-    font-size: 1.25rem;
+    font-size: var(--fs-card-title);
     margin-bottom: 6px;
 }
 
@@ -2159,7 +2182,7 @@ a {
 
 .blog-title {
     font-family: var(--font-heading);
-    font-size: 1.25rem;
+    font-size: var(--fs-card-title);
     font-weight: 700;
     color: var(--color-text-primary);
     line-height: 1.4;
@@ -2216,7 +2239,7 @@ a {
    ========================================================================== */
 
 .contact-intro-title {
-    font-size: 2rem;
+    font-size: var(--fs-section-title);
     font-weight: 700;
     margin-bottom: 16px;
     font-family: var(--font-heading);
@@ -2533,7 +2556,7 @@ a {
     background: linear-gradient(135deg, var(--color-primary), #2563eb);
     color: #ffffff !important;
     font-weight: 600;
-    font-size: 0.92rem;
+    font-size: var(--fs-btn);
     padding: 8px 20px;
     border-radius: 50px;
     border: none;
@@ -2685,7 +2708,7 @@ a {
 }
 
 .edu-stat-number {
-    font-size: 1.75rem;
+    font-size: var(--fs-stat-number);
     font-weight: 700;
     color: var(--color-primary);
     margin-bottom: 2px;
@@ -2735,7 +2758,7 @@ a {
 }
 
 .edu-subject-title {
-    font-size: 1.1rem;
+    font-size: var(--fs-card-title);
     font-weight: 600;
     margin-bottom: 8px;
 }
@@ -2813,17 +2836,7 @@ a {
         margin-right: auto;
     }
 
-    .main-name {
-        font-size: 3rem;
-    }
 
-    .typed-wrapper {
-        font-size: 1.5rem;
-    }
-
-    .sub-greeting {
-        font-size: 1rem;
-    }
 
     .profile-image-container {
         width: 260px;
@@ -2882,15 +2895,7 @@ a {
         padding: 25px 20px;
     }
 
-    /* Section title */
-    .section-title {
-        font-size: 2.2rem;
-    }
 
-    /* About */
-    .about-greeting {
-        font-size: 1.5rem;
-    }
 
     /* Stat cards */
     .stat-card {
@@ -2912,14 +2917,7 @@ a {
         padding-bottom: 70px;
     }
 
-    /* Section headers */
-    .section-title {
-        font-size: 2rem;
-    }
 
-    .section-subtitle {
-        font-size: 0.8rem;
-    }
 
     /* Hero */
     .hero-section {
@@ -2928,13 +2926,7 @@ a {
         padding-bottom: 60px;
     }
 
-    .main-name {
-        font-size: 2.6rem;
-    }
 
-    .typed-wrapper {
-        font-size: 1.35rem;
-    }
 
     .profile-image-container {
         width: 230px;
@@ -2968,36 +2960,21 @@ a {
         padding: 24px 16px;
     }
 
-    .job-role {
-        font-size: 1.25rem;
-    }
 
-    .company-name {
-        font-size: 1.1rem;
-    }
 
     /* Skills */
     .skills-category-card {
         padding: 22px 18px;
     }
 
-    .category-title {
-        font-size: 1.2rem;
-    }
+
 
     /* Project cards */
     .project-img-wrapper {
         height: 190px;
     }
 
-    /* Contact */
-    .contact-intro-title {
-        font-size: 1.4rem;
-    }
 
-    .contact-intro-text {
-        font-size: 0.95rem;
-    }
 
     .detail-icon {
         width: 48px;
@@ -3054,12 +3031,10 @@ a {
     }
 
     /* Section headers */
-    .section-title {
-        font-size: 1.8rem;
-    }
+
 
     .section-subtitle {
-        font-size: 0.75rem;
+        /* font-size handled by clamp */
         letter-spacing: 1.5px;
     }
 
@@ -3069,20 +3044,14 @@ a {
     }
 
     .sub-greeting {
-        font-size: 0.9rem;
+        /* font-size handled by clamp */
         letter-spacing: 2px;
     }
 
-    .main-name {
-        font-size: 2.1rem;
-    }
 
-    .typed-wrapper {
-        font-size: 1.15rem;
-    }
 
     .hero-description {
-        font-size: 0.92rem;
+        /* font-size handled by clamp */
         margin-bottom: 24px;
     }
 
@@ -3125,14 +3094,7 @@ a {
         display: none;
     }
 
-    /* About */
-    .about-greeting {
-        font-size: 1.3rem;
-    }
 
-    .about-text {
-        font-size: 0.95rem;
-    }
 
     /* Stat cards */
     .stat-card {
@@ -3152,9 +3114,7 @@ a {
         padding: 20px;
     }
 
-    .timeline-title {
-        font-size: 1.1rem;
-    }
+
 
     .timeline-institution {
         font-size: 0.9rem;
@@ -3178,9 +3138,7 @@ a {
         padding: 18px;
     }
 
-    .project-title {
-        font-size: 1.1rem;
-    }
+
 
     /* Filter buttons — wrappable row */
     .project-filter-buttons {
@@ -3197,9 +3155,7 @@ a {
         padding: 20px 14px;
     }
 
-    .job-role {
-        font-size: 1.1rem;
-    }
+
 
     .company-logo-badge {
         width: 48px;
@@ -3218,9 +3174,7 @@ a {
         font-size: 1.8rem;
     }
 
-    .achievement-title {
-        font-size: 1.1rem;
-    }
+
 
     /* Testimonials */
     .testimonial-inner {
@@ -3248,10 +3202,7 @@ a {
         font-size: 1.05rem;
     }
 
-    /* Contact */
-    .contact-intro-title {
-        font-size: 1.3rem;
-    }
+
 
     .contact-details-list {
         gap: 18px;
@@ -3316,17 +3267,7 @@ a {
 
 /* ── XS Breakpoint: Small Phones (≤400px) ───────────────────────────────── */
 @media (max-width: 400px) {
-    .main-name {
-        font-size: 1.85rem;
-    }
 
-    .typed-wrapper {
-        font-size: 1.05rem;
-    }
-
-    .section-title {
-        font-size: 1.6rem;
-    }
 
     .profile-image-container {
         width: 185px;
@@ -3542,7 +3483,7 @@ a {
 }
 
 .why-title {
-    font-size: 1.3rem;
+    font-size: var(--fs-card-title);
     font-weight: 700;
     margin-bottom: 12px;
     color: var(--color-text-primary);
