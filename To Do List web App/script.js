@@ -436,13 +436,16 @@ if (clearCompletedBtn) clearCompletedBtn.addEventListener('click', clearComplete
 if (sortSelect) sortSelect.addEventListener('change', renderTasks);
 
 if (themeMenuBtn && themeMenu) {
-    themeMenuBtn.addEventListener('click', (e) => {
+    const toggleMenu = (e) => {
+        e.preventDefault();
         e.stopPropagation();
         themeMenu.classList.toggle('show');
-    });
+    };
+
+    themeMenuBtn.addEventListener('click', toggleMenu);
 
     document.addEventListener('click', (e) => {
-        if (!themeMenu.contains(e.target) && e.target !== themeMenuBtn) {
+        if (!themeMenu.contains(e.target) && !themeMenuBtn.contains(e.target) && e.target !== themeMenuBtn) {
             themeMenu.classList.remove('show');
         }
     });

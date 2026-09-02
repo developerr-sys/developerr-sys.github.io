@@ -1576,6 +1576,7 @@ select:focus {
    ========================================================================== */
 .theme-dropdown {
   position: relative;
+  z-index: 1050;
 }
 
 .theme-menu-options {
@@ -1585,26 +1586,31 @@ select:focus {
   background: var(--panel-bg);
   border: 1px solid var(--panel-border);
   border-radius: 18px;
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
-  padding: 12px;
-  min-width: 170px;
-  max-width: 90vw;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  min-width: 165px;
+  max-width: 85vw;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  z-index: 1050;
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
+  z-index: 2000;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   transform: translateY(10px);
   opacity: 0;
   pointer-events: none;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
+  .app-container {
+    overflow: visible !important;
+  }
+
   .theme-menu-options {
-    right: -10px;
-    min-width: 155px;
+    right: -5px;
+    top: 48px;
+    min-width: 150px;
     padding: 8px;
   }
 }
