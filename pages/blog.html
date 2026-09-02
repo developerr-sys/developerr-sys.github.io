@@ -256,7 +256,7 @@
                 <div class="modal-header border-0 pb-0 position-relative">
                     <h3 class="modal-title text-white fw-bold mt-2" id="blogModalLabel">Blog Post Title</h3>
                     <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
-                        data-bs-dismiss="modal" aria-label="Close" style="font-size: 1.2rem;"></button>
+                        id="blog-modal-close-btn" data-bs-dismiss="modal" aria-label="Close" style="font-size: 1.2rem; cursor: pointer; z-index: 1050;"></button>
                 </div>
                 <div class="modal-body pt-3">
                     <div class="modal-meta-info mb-4 d-flex align-items-center gap-3 text-secondary small">
@@ -355,6 +355,13 @@
             const modalDate = document.getElementById('modal-blog-date');
             const modalReadTime = document.getElementById('modal-blog-readtime');
             const modalContent = document.getElementById('modal-blog-content');
+
+            const closeBtn = document.getElementById('blog-modal-close-btn');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    blogModal.hide();
+                });
+            }
 
             document.querySelectorAll('.read-more-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {

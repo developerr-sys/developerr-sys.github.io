@@ -245,6 +245,8 @@
 }
 
 .form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"],
 .form-group textarea,
 .custom-select-wrapper select {
     background: rgba(15, 23, 42, 0.6);
@@ -255,6 +257,8 @@
     font-size: 1rem;
     transition: all 0.3s ease;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -333,6 +337,10 @@
 .file-input {
     padding: 0.8rem !important;
     background: rgba(0,0,0,0.2) !important;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .btn {
