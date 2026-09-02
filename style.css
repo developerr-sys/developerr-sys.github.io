@@ -3209,44 +3209,57 @@ a {
 
     /* About section mobile refinements */
     .about-greeting {
-        font-size: clamp(1.15rem, 4vw, 1.45rem);
-        margin-bottom: 14px;
+        font-size: clamp(1.15rem, 4.5vw, 1.5rem);
+        margin-bottom: 12px;
+        text-align: left;
+        line-height: 1.35;
     }
 
     .about-text {
-        font-size: 0.92rem;
-        margin-bottom: 14px;
-        line-height: 1.6;
+        font-size: clamp(0.85rem, 3.5vw, 0.95rem);
+        margin-bottom: 12px;
+        line-height: 1.65;
+        text-align: left;
+        color: var(--color-text-secondary);
     }
 
     .about-actions {
-        margin-top: 1.2rem !important;
+        margin-top: 1.5rem !important;
+        justify-content: flex-start;
     }
 
-    /* Why Me CTA Box */
-    .why-me-cta-card {
-        padding: 24px 16px !important;
-        text-align: center;
-    }
-
-    .why-me-cta-card .btn-gradient {
+    .about-actions .btn {
         width: 100%;
-        max-width: 280px;
-        margin-top: 10px;
+        max-width: 240px;
+        text-align: center;
     }
 
     /* Stat cards */
     .stat-card {
-        padding: 16px 12px;
+        padding: 16px 10px;
+        text-align: center;
+        border-radius: 16px;
+    }
+
+    .stat-card .stat-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
     }
 
     .stat-card h3 {
-        font-size: 1.5rem;
+        font-size: clamp(1.3rem, 4vw, 1.65rem);
+        margin-bottom: 4px;
     }
 
     .experience-stat-title {
-        font-size: 1.2rem !important;
-        margin-bottom: 8px !important;
+        font-size: clamp(1.05rem, 3.5vw, 1.25rem) !important;
+        margin-bottom: 4px !important;
+    }
+
+    .stat-title {
+        font-size: 0.78rem;
     }
 
     .stat-title {

@@ -1607,10 +1607,21 @@ select:focus {
     overflow: visible !important;
   }
 
+  .app-header {
+    position: relative;
+    z-index: 1050;
+  }
+
+  .theme-dropdown {
+    position: relative;
+  }
+
   .theme-menu-options {
-    right: -5px;
-    top: 48px;
-    min-width: 150px;
+    left: 0;
+    right: auto;
+    top: 52px;
+    min-width: 160px;
+    max-width: 200px;
     padding: 8px;
   }
 }
