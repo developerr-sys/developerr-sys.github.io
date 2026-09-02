@@ -286,12 +286,47 @@ body {
 }
 
 @media (max-width: 576px) {
+    .standalone-nav {
+        padding: 0.75rem 1rem;
+    }
+
+    .nav-brand-box {
+        font-size: 1rem;
+    }
+
+    .back-projects-btn {
+        padding: 0.45rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
     .finance-container {
-        margin-top: 20px;
+        margin: 20px auto;
         padding: 0 12px;
     }
 
     .glass-card {
         padding: 20px 15px;
+        border-radius: 16px;
+    }
+
+    .stat-val {
+        font-size: 1.35rem;
+    }
+
+    .finance-form {
+        padding: 15px 12px;
+    }
+
+    .transaction-item {
+        padding: 12px 14px;
+    }
+
+    .item-name {
+        font-size: 0.85rem;
+    }
+
+    .item-amount {
+        font-size: 0.9rem;
     }
 }
+

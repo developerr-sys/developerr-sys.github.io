@@ -1501,17 +1501,44 @@ select:focus {
 
 @media (max-width: 600px) {
   body {
-    padding: 20px 10px;
+    padding: 0 0 30px 0;
+  }
+
+  .standalone-nav {
+    padding: 0.75rem 1rem;
+    margin-bottom: 15px;
+  }
+
+  .app-title-text {
+    font-size: 0.9rem;
+  }
+
+  .back-projects-btn {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.78rem;
   }
 
   .app-container {
-    padding: 20px 14px;
+    padding: 18px 12px;
     border-radius: 16px;
     max-width: 100%;
   }
 
   .add-task-section {
     flex-direction: column;
+    gap: 8px;
+  }
+
+  .add-task-row.main-row {
+    flex-direction: column;
+  }
+
+  #add-task-btn {
+    width: 100%;
+  }
+
+  .meta-row {
+    grid-template-columns: 1fr;
     gap: 8px;
   }
 
@@ -1542,6 +1569,7 @@ select:focus {
     font-size: 1.3rem;
   }
 }
+
 
 /* ==========================================================================
    Theme Selection Dropdown Style
