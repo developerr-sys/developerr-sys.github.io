@@ -2870,6 +2870,20 @@ a {
 
 /* ── XL Breakpoint: Collapsed Navbar (≤1200px) ──────────────────────────── */
 @media (max-width: 1200px) {
+    .navbar > .container {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    .navbar .order-xl-3 {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        margin-left: auto !important;
+    }
+
     .navbar-collapse {
         margin-top: 15px;
         background: var(--color-navbar-bg);
@@ -2881,6 +2895,7 @@ a {
         box-shadow: var(--color-card-shadow);
         max-height: 80vh;
         overflow-y: auto;
+        width: 100%;
     }
 
     .navbar-nav {
@@ -3124,9 +3139,14 @@ a {
 
     /* Back to Projects mobile fit */
     .btn-nav-back {
-        padding: 5px 10px !important;
-        font-size: 0.76rem !important;
-        letter-spacing: -0.2px;
+        padding: 5px 8px !important;
+        font-size: 0.72rem !important;
+        letter-spacing: -0.3px;
+        white-space: nowrap !important;
+    }
+
+    .brand-text {
+        font-size: 1.05rem !important;
     }
 
     /* Back-to-top */
