@@ -1323,6 +1323,68 @@ body.dark-override .search-input {
     }
 }
 
+/* ==========================================================================
+   DEMO STORES BANNER RESPONSIVE STYLES
+   ========================================================================== */
+.demo-stores-banner {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.15);
+    text-align: center;
+}
+
+.demo-banner-title {
+    font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+    margin-bottom: 0.6rem;
+    color: #cbd5e1;
+    font-weight: 700;
+}
+
+.demo-banner-sub {
+    color: #94a3b8;
+    font-size: clamp(0.82rem, 1.5vw, 0.95rem);
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+}
+
+.demo-stores-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.demo-store-link {
+    width: auto;
+    text-decoration: none !important;
+    font-size: 0.92rem;
+    padding: 0.65rem 1.2rem;
+    white-space: nowrap;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.demo-store-link:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 650px) {
+    .demo-stores-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .demo-store-link {
+        width: 100% !important;
+        text-align: center;
+        white-space: normal;
+        font-size: 0.88rem;
+        padding: 0.75rem 1rem;
+    }
+}
+
 /* Very Small Phones (Max Width: 380px) */
 @media (max-width: 380px) {
     .hero h1, .shop-header h1 { 
@@ -1345,10 +1407,6 @@ body.dark-override .search-input {
     .nav-btn-outline {
         padding: 0.35rem 0.5rem;
         font-size: 0.75rem;
-    }
-
-    .demo-stores-banner a {
-        width: 100% !important;
     }
 }
 
