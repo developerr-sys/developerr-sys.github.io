@@ -1504,6 +1504,30 @@ select:focus {
     padding: 0 0 30px 0;
   }
 
+  .header-titles h1 {
+    font-size: clamp(1.25rem, 5vw, 1.6rem) !important;
+  }
+
+  .subtitle {
+    font-size: 0.85rem !important;
+  }
+
+  #task-input, #search-input, select, input[type="text"], input[type="date"] {
+    font-size: 0.85rem !important;
+  }
+
+  .meta-label {
+    font-size: 0.75rem !important;
+  }
+
+  .btn, .btn-filter {
+    font-size: 0.82rem !important;
+  }
+
+  .task-title {
+    font-size: 0.88rem !important;
+  }
+
   .standalone-nav {
     padding: 0.75rem 1rem;
     margin-bottom: 15px;
