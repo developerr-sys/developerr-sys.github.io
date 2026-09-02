@@ -1641,12 +1641,17 @@ select:focus {
   }
 
   .theme-menu-options {
-    left: 0;
-    right: auto;
-    top: 52px;
-    min-width: 160px;
-    max-width: 200px;
-    padding: 8px;
+    right: 0 !important;
+    left: auto !important;
+    top: 48px;
+    min-width: 145px;
+    max-width: 170px;
+    padding: 6px;
+  }
+
+  .theme-option {
+    padding: 6px 10px;
+    font-size: 0.82rem;
   }
 }
 

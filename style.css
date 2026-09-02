@@ -3122,6 +3122,13 @@ a {
         padding: 28px 18px;
     }
 
+    /* Back to Projects mobile fit */
+    .btn-nav-back {
+        padding: 5px 10px !important;
+        font-size: 0.76rem !important;
+        letter-spacing: -0.2px;
+    }
+
     /* Back-to-top */
     #back-to-top {
         bottom: 20px;
