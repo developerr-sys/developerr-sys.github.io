@@ -530,7 +530,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (document.getElementById('cvModal')) return;
 
         const isInsidePages = window.location.pathname.includes('/pages/');
-        const cvImagePath = isInsidePages ? '../Anmol CV.jpg' : 'Anmol CV.jpg';
+        const cvDocumentPath = isInsidePages ? '../Resume.pdf' : 'Resume.pdf';
 
         const modalHtml = `
         <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
@@ -548,19 +548,20 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <button type="button" class="cv-zoom-btn" id="cvZoomReset" title="Reset Zoom"><i class="fa-solid fa-rotate-left"></i></button>
                                 <button type="button" class="cv-zoom-btn" id="cvZoomIn" title="Zoom In"><i class="fa-solid fa-plus"></i></button>
                             </div>
-                            <a href="${cvImagePath}" download="Anmol_Akber_CV.jpg" class="btn-cv-download-top" id="cvTopDownloadBtn">
+                            <a href="${cvDocumentPath}" download="Anmol_Akber_Resume.pdf" class="btn-cv-download-top" id="cvTopDownloadBtn">
                                 <i class="fa-solid fa-download"></i> Download CV
                             </a>
-                            <a href="${cvImagePath}" target="_blank" class="btn btn-outline-light btn-sm rounded-circle p-2 ms-1" id="cvOpenOriginalBtn" title="Open Original Image">
+                            <a href="${cvDocumentPath}" target="_blank" class="btn btn-outline-light btn-sm rounded-circle p-2 ms-1" id="cvOpenOriginalBtn" title="Open Resume PDF">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </a>
                             <button type="button" class="btn-close btn-close-white ms-2" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                     </div>
-                    <!-- CV Image Viewport -->
+                    <!-- CV PDF Viewport -->
                     <div class="cv-modal-body" id="cvModalBody">
                         <div class="cv-image-frame" id="cvImageFrame">
-                            <img src="${cvImagePath}" alt="Anmol Akber CV Preview" id="cvImage">
+                            <embed src="${cvDocumentPath}" type="application/pdf" title="Anmol Akber Resume" id="cvImage"
+                                style="width: 100%; max-width: 850px; min-height: 75vh; border: none; border-radius: 10px;">
                         </div>
                     </div>
                 </div>
@@ -601,7 +602,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Intercept clicks on Download CV links/buttons across all pages (Exclude modal top bar actions)
-        const cvTrigger = e.target.closest('a[href*="Anmol CV.jpg"], [data-cv-trigger], .btn-download-cv');
+        const cvTrigger = e.target.closest('a[href*="Resume.pdf"], [data-cv-trigger], .btn-download-cv');
         if (cvTrigger && !e.target.closest('#cvTopDownloadBtn, #cvOpenOriginalBtn, .cv-modal-header')) {
             e.preventDefault();
             ensureCvModalExists();

@@ -175,7 +175,7 @@
                         </p>
                         <div
                             class="hero-buttons mt-4 d-flex align-items-center flex-wrap gap-2 justify-content-center justify-content-lg-start">
-                            <a href="Anmol CV.jpg" target="_blank" class="btn btn-primary btn-gradient">
+                            <a href="Resume.pdf" class="btn btn-primary btn-gradient" data-cv-trigger>
                                 <i class="fa-solid fa-download me-2"></i>Download CV
                             </a>
                             <a href="pages/contact.html" class="btn btn-outline-custom">
@@ -207,23 +207,22 @@
                             <button type="button" class="cv-zoom-btn" id="cvZoomIn" title="Zoom In"><i
                                     class="fa-solid fa-plus"></i></button>
                         </div>
-                        <a href="Anmol CV.jpg" download="Anmol_Akber_CV.jpg" class="btn-cv-download-top"
+                        <a href="Resume.pdf" download="Anmol_Akber_Resume.pdf" class="btn-cv-download-top"
                             id="cvTopDownloadBtn">
                             <i class="fa-solid fa-download"></i> Download CV
                         </a>
-                        <a href="Anmol CV.jpg" target="_blank"
-                            class="btn btn-outline-light btn-sm rounded-circle p-2 ms-1" id="cvOpenOriginalBtn"
-                            title="Open Original Image">
+                        <a href="Resume.pdf" target="_blank" class="btn btn-outline-light btn-sm rounded-circle p-2 ms-1" id="cvOpenOriginalBtn"
+                            title="Open Resume PDF">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                         <button type="button" class="btn-close btn-close-white ms-2" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
                 </div>
-                <!-- CV Image Viewport -->
+                <!-- CV PDF Viewport -->
                 <div class="cv-modal-body" id="cvModalBody">
                     <div class="cv-image-frame" id="cvImageFrame">
-                        <img src="Anmol CV.jpg" alt="Anmol Akber CV Preview" id="cvImage">
+                        <embed src="Resume.pdf" type="application/pdf" title="Anmol Akber Resume" id="cvImage" class="cv-pdf-embed">
                     </div>
                 </div>
             </div>
