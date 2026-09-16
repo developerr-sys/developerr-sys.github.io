@@ -550,6 +550,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    async function downloadCvFile(downloadLink) {
+        const response = await fetch(downloadLink.href, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`CV download failed: ${response.status}`);
+
+        const fileBlob = await response.blob();
+        const temporaryUrl = URL.createObjectURL(fileBlob);
+        const downloadAnchor = document.createElement('a');
+        downloadAnchor.href = temporaryUrl;
+        downloadAnchor.download = 'Anmol_Akber_Resume.pdf';
+        document.body.appendChild(downloadAnchor);
+        downloadAnchor.click();
+        downloadAnchor.remove();
+        URL.revokeObjectURL(temporaryUrl);
+    }
+
     function applyCvZoom(zoomVal) {
         const cvImageFrame = document.getElementById('cvImageFrame');
         if (!cvImageFrame) return;
@@ -635,6 +650,16 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             e.stopPropagation();
             applyCvZoom(1);
+            return;
+        }
+
+        const cvDownloadButton = e.target.closest('#cvTopDownloadBtn');
+        if (cvDownloadButton && (window.matchMedia('(max-width: 768px)').matches ||
+            /Android|iPhone|iPad|iPod/i.test(navigator.userAgent))) {
+            e.preventDefault();
+            downloadCvFile(cvDownloadButton).catch(() => {
+                window.location.assign(cvDownloadButton.href);
+            });
             return;
         }
 
