@@ -2728,6 +2728,34 @@ a {
     min-height: 80vh;
 }
 
+.cv-mobile-fallback {
+    display: none;
+    padding: 36px 20px;
+    color: #0b0f19;
+    text-align: center;
+}
+
+.cv-mobile-fallback > i {
+    color: #2563eb;
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.cv-mobile-fallback p {
+    margin-bottom: 20px;
+}
+
+.cv-mobile-fallback a {
+    display: inline-block;
+    margin: 4px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    background: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
 .cv-zoom-controls {
     display: inline-flex;
     align-items: center;
@@ -2790,8 +2818,11 @@ a {
     }
 
     .cv-image-frame embed {
-        min-height: 62vh;
-        height: 62vh;
+        display: none;
+    }
+
+    .cv-mobile-fallback {
+        display: block;
     }
 }
 
@@ -2845,8 +2876,7 @@ a {
     }
 
     .cv-image-frame embed {
-        min-height: 58vh;
-        height: 58vh;
+        display: none;
     }
 }
 

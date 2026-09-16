@@ -562,6 +562,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="cv-image-frame" id="cvImageFrame">
                             <embed src="${cvDocumentPath}" type="application/pdf" title="Anmol Akber Resume" id="cvImage"
                                 style="width: 100%; max-width: 850px; min-height: 75vh; border: none; border-radius: 10px;">
+                            <div class="cv-mobile-fallback">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <p>PDF preview is not supported on this device.</p>
+                                <a href="${cvDocumentPath}" target="_blank" rel="noopener">Open CV</a>
+                                <a href="${cvDocumentPath}" download="Anmol_Akber_Resume.pdf">Download CV</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -605,6 +611,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const cvTrigger = e.target.closest('a[href*="Resume.pdf"], [data-cv-trigger], .btn-download-cv');
         if (cvTrigger && !e.target.closest('#cvTopDownloadBtn, #cvOpenOriginalBtn, .cv-modal-header')) {
             e.preventDefault();
+
+            // Mobile browsers handle PDF files more reliably in their native viewer.
+            const isMobileDevice = window.matchMedia('(max-width: 768px)').matches ||
+                /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+            if (isMobileDevice) {
+                window.location.assign(cvTrigger.href);
+                return;
+            }
+
             ensureCvModalExists();
             const cvModalEl = document.getElementById('cvModal');
             if (cvModalEl) {
