@@ -3631,7 +3631,7 @@ a {
     .about-text {
         font-size: 0.95rem;
         line-height: 1.55;
-        text-align: justify;
+        text-align: left;
     }
 
     .contact-form-wrapper {
