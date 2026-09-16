@@ -2720,6 +2720,7 @@ a {
     width: 100%;
     max-width: 850px;
     min-height: 75vh;
+    height: 75vh;
     border: none;
     border-radius: 10px;
 }
@@ -2817,12 +2818,10 @@ a {
         max-height: calc(100vh - 180px);
     }
 
+    .cv-image-frame iframe,
     .cv-image-frame embed {
-        display: none;
-    }
-
-    .cv-mobile-fallback {
-        display: block;
+        min-height: 62vh;
+        height: 62vh;
     }
 }
 
@@ -2875,8 +2874,10 @@ a {
         justify-content: center;
     }
 
+    .cv-image-frame iframe,
     .cv-image-frame embed {
-        display: none;
+        min-height: 58vh;
+        height: 58vh;
     }
 }
 
