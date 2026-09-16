@@ -2729,6 +2729,13 @@ a {
     min-height: 80vh;
 }
 
+.cv-pdf-canvas {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
 .cv-mobile-fallback {
     display: none;
     padding: 36px 20px;

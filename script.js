@@ -518,6 +518,38 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     let currentCvZoomLevel = 1;
 
+    async function renderCvPreview(documentPath) {
+        const canvas = document.getElementById('cvImage');
+        const frame = document.getElementById('cvImageFrame');
+        const fallback = frame?.querySelector('.cv-mobile-fallback');
+        if (!canvas || !frame || !window.pdfjsLib) return;
+
+        try {
+            pdfjsLib.GlobalWorkerOptions.workerSrc =
+                'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+            const pdf = await pdfjsLib.getDocument(documentPath).promise;
+            const page = await pdf.getPage(1);
+            const baseViewport = page.getViewport({ scale: 1 });
+            const availableWidth = Math.max(frame.clientWidth, 320);
+            const viewport = page.getViewport({ scale: availableWidth / baseViewport.width });
+            const pixelRatio = window.devicePixelRatio || 1;
+            const context = canvas.getContext('2d');
+
+            canvas.width = Math.floor(viewport.width * pixelRatio);
+            canvas.height = Math.floor(viewport.height * pixelRatio);
+            canvas.style.width = `${Math.floor(viewport.width)}px`;
+            canvas.style.height = `${Math.floor(viewport.height)}px`;
+            context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+            await page.render({ canvasContext: context, viewport }).promise;
+            canvas.hidden = false;
+            if (fallback) fallback.style.display = 'none';
+        } catch (error) {
+            canvas.hidden = true;
+            if (fallback) fallback.style.display = 'block';
+            console.error('Unable to render CV preview:', error);
+        }
+    }
+
     function applyCvZoom(zoomVal) {
         const cvImageFrame = document.getElementById('cvImageFrame');
         if (!cvImageFrame) return;
@@ -560,8 +592,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <!-- CV PDF Viewport -->
                     <div class="cv-modal-body" id="cvModalBody">
                         <div class="cv-image-frame" id="cvImageFrame">
-                            <iframe src="${cvDocumentPath}" title="Anmol Akber Resume" id="cvImage"
-                                style="width: 100%; max-width: 850px; min-height: 75vh; height: 75vh; border: none; border-radius: 10px;"></iframe>
+                            <canvas id="cvImage" class="cv-pdf-canvas" aria-label="Anmol Akber Resume preview"></canvas>
                             <div class="cv-mobile-fallback">
                                 <i class="fa-solid fa-file-pdf"></i>
                                 <p>PDF preview is not supported on this device.</p>
@@ -617,6 +648,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (cvModalEl) {
                 applyCvZoom(1); // Reset zoom level when opening modal
                 const bsModal = bootstrap.Modal.getOrCreateInstance(cvModalEl);
+                cvModalEl.addEventListener('shown.bs.modal', () => {
+                    renderCvPreview(cvTrigger.getAttribute('href'));
+                }, { once: true });
                 bsModal.show();
             }
         }
