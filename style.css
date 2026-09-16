@@ -1103,6 +1103,12 @@ a {
     line-height: 1.65;
 }
 
+@media (max-width: 576px) {
+    .about-text {
+        text-align: justify;
+    }
+}
+
 /* Stats Cards */
 .stat-card {
     padding: 30px 20px;
