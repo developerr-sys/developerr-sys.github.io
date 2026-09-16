@@ -1100,6 +1100,8 @@ a {
     font-size: var(--fs-body);
     margin-bottom: 15px;
     text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
     line-height: 1.65;
 }
 
@@ -3631,7 +3633,7 @@ a {
     .about-text {
         font-size: 0.95rem;
         line-height: 1.55;
-        text-align: left;
+        text-align: justify;
     }
 
     .contact-form-wrapper {
