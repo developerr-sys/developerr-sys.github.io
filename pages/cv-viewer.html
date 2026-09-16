@@ -71,6 +71,28 @@
             display: block;
         }
 
+        .cv-mobile-fallback {
+            display: none;
+            padding: 32px 20px;
+            color: #0b0f19;
+            text-align: center;
+        }
+
+        .cv-mobile-fallback p {
+            margin-bottom: 20px;
+        }
+
+        .cv-mobile-fallback a {
+            display: inline-block;
+            margin: 4px;
+            padding: 10px 16px;
+            border-radius: 6px;
+            background: #3b82f6;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
         @media (max-width: 768px) {
             .cv-top-header-bar {
                 padding: 12px 14px;
@@ -91,7 +113,11 @@
             }
 
             .cv-paper embed {
-                min-height: 70vh;
+                display: none;
+            }
+
+            .cv-mobile-fallback {
+                display: block;
             }
         }
     </style>
@@ -126,6 +152,11 @@
     <main class="cv-page-container">
         <div class="cv-paper">
             <embed src="../Resume.pdf" type="application/pdf" title="Anmol Akber Curriculum Vitae" class="cv-viewer-pdf">
+            <div class="cv-mobile-fallback">
+                <p>PDF preview is not supported on this device.</p>
+                <a href="../Resume.pdf" target="_blank" rel="noopener">Open CV</a>
+                <a href="../Resume.pdf" download="Anmol_Akber_Resume.pdf">Download CV</a>
+            </div>
         </div>
     </main>
 
