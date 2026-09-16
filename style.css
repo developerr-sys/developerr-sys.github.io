@@ -3412,7 +3412,7 @@ a {
     }
 
     .about-text {
-        font-size: clamp(0.85rem, 3.5vw, 0.95rem);
+        font-size: clamp(0.78rem, 2.8vw, 0.88rem);
         margin-bottom: 12px;
         line-height: 1.65;
         text-align: justify;
@@ -3662,7 +3662,7 @@ a {
     }
 
     .about-text {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
         line-height: 1.55;
         text-align: justify;
     }
