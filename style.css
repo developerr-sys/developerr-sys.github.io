@@ -1611,6 +1611,10 @@ a {
     border-radius: 12px;
     flex-grow: 1;
     max-width: 220px;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .project-mockup-content {
@@ -1636,6 +1640,10 @@ a {
 
 .shop-mockup-bg {
     background: radial-gradient(circle at top right, rgba(37, 211, 102, 0.25), rgba(15, 23, 42, 0.95));
+}
+
+.leave-mockup-bg {
+    background: radial-gradient(circle at top right, rgba(15, 158, 110, 0.28), rgba(15, 23, 42, 0.95));
 }
 
 .design-mockup-bg {
@@ -1685,6 +1693,7 @@ a {
     display: flex;
     gap: 8px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .mockup-btn {
@@ -2054,6 +2063,117 @@ a {
 .custom-badge-award {
     background: rgba(255, 193, 7, 0.15);
     color: #ffc107;
+}
+
+.custom-badge-arch {
+    background: rgba(30, 136, 229, 0.12);
+    color: #1e88e5;
+}
+
+.dark-mode .custom-badge-arch {
+    background: rgba(96, 181, 255, 0.15);
+    color: #60b5ff;
+}
+
+/* Certificate thumbnail & preview (Achievements) */
+.certificate-thumb-link {
+    display: block;
+    margin-top: 18px;
+    text-decoration: none;
+    max-width: 100%;
+}
+
+.certificate-thumb {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 170px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-thumb-link:hover .certificate-thumb {
+    transform: scale(1.03);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.certificate-view-hint {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-color, #1e88e5);
+    letter-spacing: 0.5px;
+}
+
+.certificate-modal-content {
+    background: #1c1e22;
+    border: none;
+    border-radius: 14px;
+}
+
+.certificate-modal-content .modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.certificate-modal-content .modal-title {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.certificate-modal-content .btn-close {
+    filter: invert(1);
+}
+
+.certificate-modal-content .modal-body {
+    padding: 16px;
+    overflow: hidden;
+}
+
+.certificate-full-img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 72vh;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* Responsive tweaks so certificates & cards never overflow */
+@media (max-width: 991.98px) {
+    .certificate-thumb {
+        height: 160px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .certificate-thumb {
+        height: 150px;
+    }
+
+    .certificate-modal-content .modal-body {
+        padding: 10px;
+    }
+
+    .certificate-full-img {
+        max-height: 62vh;
+    }
+}
+
+@media (max-width: 400px) {
+    .certificate-thumb {
+        height: 130px;
+    }
+
+    .certificate-view-hint {
+        font-size: 0.78rem;
+    }
 }
 
 .achievement-title {
